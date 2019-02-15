@@ -28,7 +28,7 @@ $conn->set_charset('utf8');
     //3.执行插入语句
 if($sc==null){
     if($id!=null){
-        $cz = $conn->query("select * from buy where id = $id");
+        $cz = $conn->query("select * from buy where id = $id and buy = 0");
             // var_dump($cz);
         if($cz ->num_rows > 0){
             $res = $conn->query("update buy set qty=qty+$allqty,allprice=price+$allprice where name= $name AND id= $id AND buy=0");
